@@ -1,4 +1,4 @@
-//V4.0
+//V4.1
 
 // Initialize context menu items when the extension is installed
 chrome.runtime.onInstalled.addListener(() => {

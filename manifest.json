@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Custom Context Menu Extension",
+  "version": "1.0",
+  "description": "Adds custom buttons to the right-click menu",
+  "permissions": [
+    "contextMenus",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://raw.githubusercontent.com/*",
+    "https://cdn.jsdelivr.net/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "128": "icon.png"
+  },
+  "action": {
+    "default_icon": "icon.png"
+  },
+  "commands": {
+    "scrape_links": {
+      "suggested_key": {
+        "mac": "Shift+Command+E"
+      },
+      "description": "Scrape links from the current page"
+    }
+  }
+}
